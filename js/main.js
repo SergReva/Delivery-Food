@@ -21,7 +21,7 @@ const buttonAuth = document.querySelector('.button-auth'),
 	buttonOut = document.querySelector('.button-out'),
 	modalAuthPopup = document.querySelector('.modal-auth-popup');
 
-let login = localStorage.getItem('gloDelivery');
+let login = localStorage.getItem('user_a');
 
 function toogleModalAuth() {
 	modalAuth.classList.toggle('is-open');
@@ -33,7 +33,7 @@ function toogleModalAuth() {
 function autorized() {
 	function logOut() {
 		login = null;
-		localStorage.removeItem('gloDelivery');
+		localStorage.removeItem('user_a');
 		buttonAuth.style.display = '';
 		userName.style.display = '';
 		buttonOut.style.display = '';
@@ -61,7 +61,7 @@ function notAutorized() {
 		event.preventDefault();
 		login = loginInput.value;
 
-		localStorage.setItem('gloDelivery', login);
+		localStorage.setItem('user_a', login);
 
 		if (login) {
 			toogleModalAuth();	
